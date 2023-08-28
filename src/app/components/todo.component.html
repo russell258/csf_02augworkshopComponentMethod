@@ -1,0 +1,32 @@
+<div class="container" style="border:ridge">
+  <h1 style="color:orange">
+    ToDo
+  </h1>
+  <table [formGroup]="todoForm" (ngSubmit)="addForm()">
+    <tr>
+      Description:
+      <input type="text" formControlName="description">
+      <div *ngIf = "todoForm.get('description').hasError('required') && todoForm.get('description').touched" style="color:red">
+        Please enter description
+     </div>
+    </tr>
+    <tr>
+      Priority:
+      <div class="radio-inline">
+      <input type="radio" value="High" formControlName="priority">
+        <label>High</label>
+      <input type="radio" value="Medium" formControlName="priority">
+        <label>Medium</label>
+      <input type="radio" value="Low" formControlName="priority">
+        <label>Low</label>
+      </div>
+    </tr>
+    <tr>
+      Due:
+      <input type="date" formControlName="due">
+    </tr>
+    <tr>
+      <button class="btn btn-info" type="submit" [disabled]="!todoForm.valid">Add</button>
+    </tr>
+  </table>
+</div>
