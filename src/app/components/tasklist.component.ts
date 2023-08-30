@@ -10,6 +10,8 @@ export class TasklistComponent {
 
   @Input() taskList!: TaskClass[];
 
-
+  editToDo(){
+    console.log("edit");
+  }
 
 }

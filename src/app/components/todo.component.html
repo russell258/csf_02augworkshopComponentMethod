@@ -7,8 +7,11 @@
       <tr>
         Description:
         <input type="text" formControlName="description">
-        <div *ngIf = "todoForm.get('description')?.hasError('required') && todoForm.get('description')" style="color:red">
-          Please enter description
+        <div *ngIf = "todoForm.get('description')?.hasError('required') && todoForm.get('description')?.touched" style="color:red">
+          Please enter description (mandatory)
+       </div>
+       <div *ngIf="todoForm.get('description')?.hasError('minlength')" style="color:red">
+          Please enter more than 5 characters
        </div>
       </tr>
       <tr>
