@@ -1,1 +1,4 @@
-
+<div class="container">
+  <app-todo (createNewToDo)="addToDo($event)"></app-todo>
+  <app-tasklist [taskList]="toDoArray"></app-tasklist>
+</div>

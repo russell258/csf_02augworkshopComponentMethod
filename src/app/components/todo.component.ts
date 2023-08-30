@@ -9,11 +9,10 @@ import { TaskClass } from '../task-class';
 })
 export class TodoComponent implements OnInit{
 
+
   @Output() createNewToDo=new EventEmitter;
 
   todoForm!: FormGroup;
-
-  toDoArray: TaskClass[]=[];
 
   constructor(private fb: FormBuilder){}
 
@@ -26,7 +25,8 @@ export class TodoComponent implements OnInit{
   }
 
   addForm(){
-    console.log('add test');
+    console.log(this.todoForm.value);
+    this.createNewToDo.emit(this.todoForm.value);
   }
 
 

@@ -1,0 +1,9 @@
+<div class="task-container">
+    <h1>Tasks</h1>
+    <div *ngIf="!taskList.length">taskListLength Checking</div>
+    <div *ngFor="let task of taskList">
+      <h3>{{task.description}}</h3>
+      <span>{{task.priority}}</span>
+      <span>{{task.due}}</span>
+    </div>
+</div>
